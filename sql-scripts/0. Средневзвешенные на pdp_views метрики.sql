@@ -1,4 +1,3 @@
--- средневзвешенные конверсии по просмотрам PDP
 WITH base_data AS (
     SELECT
         CASE
@@ -39,3 +38,4 @@ FROM base_data bd
 JOIN weighted_metrics wm ON bd.subdivision_id = wm.subdivision_id
 GROUP BY CONCAT(bd.product_type, '-', bd.subdivision_id), bd.product_type, bd.division_id, bd.subdivision_id, wm.CR_PLP_to_PDP, wm.CR_PLP_A2C, wm.CR_PDP_A2C
 ORDER BY bd.division_id, bd.subdivision_id, bd.product_type;
+
